@@ -1,6 +1,6 @@
 ﻿namespace SrinivasToolkit
 {
-    partial class Form1
+    partial class eCanarysPayslipParser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(53, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // eCanarysPayslipParser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.button1);
+            this.Name = "eCanarysPayslipParser";
+            this.Text = "eCanarysPayslipParser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.eCanarysPayslipParser_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
-
