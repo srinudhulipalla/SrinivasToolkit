@@ -19,7 +19,7 @@ namespace SrinivasToolkit.Business
             DataAccess oDA = new DataAccess();
 
             Aspose.Pdf.License lic = new Aspose.Pdf.License();
-            lic.SetLicense("License.lic");
+            lic.SetLicense("TempLicense.lic");
 
             Document oPayslipDoc = new Document(oPayslipPath);
 
