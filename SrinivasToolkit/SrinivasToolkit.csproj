@@ -32,9 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>C:\Users\SrinivasaRao\Desktop\WinFormsTest\bin\Debug\Aspose.Pdf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\DataAccess.cs" />
+    <Compile Include="Business\eCanarys.cs" />
     <Compile Include="eCanarysPayslipParser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,10 +95,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Srinivas.png" />
     <None Include="Resources\canarys-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParsePayslip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

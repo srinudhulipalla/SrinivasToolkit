@@ -48,18 +48,20 @@
             // 
             // lineShape1
             // 
+            this.lineShape1.BorderColor = System.Drawing.Color.DarkRed;
+            this.lineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lineShape1.X1 = 11;
-            this.lineShape1.X2 = 664;
-            this.lineShape1.Y1 = 62;
-            this.lineShape1.Y2 = 62;
+            this.lineShape1.SelectionColor = System.Drawing.Color.DarkRed;
+            this.lineShape1.X1 = 8;
+            this.lineShape1.X2 = 961;
+            this.lineShape1.Y1 = 69;
+            this.lineShape1.Y2 = 69;
             // 
             // btnCanarysPayslip
             // 
             this.btnCanarysPayslip.BackColor = System.Drawing.Color.PeachPuff;
             this.btnCanarysPayslip.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCanarysPayslip.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnCanarysPayslip.ForeColor = System.Drawing.Color.DarkRed;
             this.btnCanarysPayslip.Image = global::SrinivasToolkit.Properties.Resources.canarys_logo;
             this.btnCanarysPayslip.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCanarysPayslip.Location = new System.Drawing.Point(71, 104);
@@ -74,9 +76,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(124, 9);
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(235, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(432, 49);
             this.label1.TabIndex = 0;
@@ -86,13 +89,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackgroundImage = global::SrinivasToolkit.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.btnCanarysPayslip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Srinivas Software Toolkit";
