@@ -35,7 +35,9 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // button1
@@ -62,10 +64,11 @@
             // 
             // txtPayslipPath
             // 
+            this.txtPayslipPath.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPayslipPath.Location = new System.Drawing.Point(168, 121);
             this.txtPayslipPath.Name = "txtPayslipPath";
             this.txtPayslipPath.ReadOnly = true;
-            this.txtPayslipPath.Size = new System.Drawing.Size(342, 20);
+            this.txtPayslipPath.Size = new System.Drawing.Size(342, 21);
             this.txtPayslipPath.TabIndex = 1;
             // 
             // btnBrowse
@@ -97,46 +100,74 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(215, 140);
+            this.label2.Location = new System.Drawing.Point(215, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 13);
+            this.label2.Size = new System.Drawing.Size(381, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "You can parse either single payslip (.pdf) or multiple payslips (.zip)";
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.BackColor = System.Drawing.Color.PeachPuff;
-            this.button2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkRed;
-            this.button2.Image = global::SrinivasToolkit.Properties.Resources.Cancel;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(384, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 45);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.Image = global::SrinivasToolkit.Properties.Resources.Cancel;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(384, 177);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(126, 45);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(233, 263);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(78, 13);
+            this.lblMessage.TabIndex = 6;
+            this.lblMessage.Text = "[lblMessage]";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(236, 240);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(274, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 7;
             // 
             // eCanarysPayslipParser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackgroundImage = global::SrinivasToolkit.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtPayslipPath);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "eCanarysPayslipParser";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eCanarys Pay-slip Parser";
             this.Load += new System.EventHandler(this.eCanarysPayslipParser_Load);
@@ -153,6 +184,8 @@
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
