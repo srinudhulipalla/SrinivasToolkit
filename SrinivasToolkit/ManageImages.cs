@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,8 @@ namespace SrinivasToolkit
 
         private void ManageImages_Load(object sender, EventArgs e)
         {
-            
+            pictureBox1.Visible = progressBar1.Visible = false;            
+            lblMessage.Text = string.Empty;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace SrinivasToolkit
             }
 
             DoWork oWork = new DoWork(ChangeImageDimensions);
-
+            progressBar1.BeginInvoke(oWork, oHeight, oWidth);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -72,55 +74,65 @@ namespace SrinivasToolkit
 
         void ChangeImageDimensions(int oHeight, int oWidth)
         {
-            string sDestFolderName = txtImagesFolderPath.Text + "\\" + DateTime.Now.ToString("dd-MMM-yyyy hh-mm tt") + "\\";
-
-            Directory.CreateDirectory(sDestFolderName);
-
             try
             {
-                foreach (string file in Directory.GetFiles(txtImagesFolderPath.Text))
+                pictureBox1.Visible = progressBar1.Visible = true;
+                lblMessage.ForeColor = Color.Red;
+
+                string[] oSourceImages = Directory.GetFiles(txtImagesFolderPath.Text);
+                int oCounter = 0;
+                progressBar1.Minimum = 0;
+                progressBar1.Maximum = oSourceImages.Length;
+                
+                string sDestFolderName = txtImagesFolderPath.Text + "\\" + DateTime.Now.ToString("dd-MMM-yyyy hh-mm tt") + "\\";
+                Directory.CreateDirectory(sDestFolderName);
+                
+                for (int i = 0; i < oSourceImages.Length; i++)
                 {
-                    string extn = System.IO.Path.GetExtension(file).ToLower();
+                    string oFile = oSourceImages[i];
+                    string extn = Path.GetExtension(oFile).ToLower();
 
-                    if (extn == ".jpg" || extn == "jpeg" || extn == "png")
+                    if (extn == ".jpg" || extn == ".jpeg" || extn == ".png")
                     {
-                        string width = string.Empty;
-                        string height = string.Empty;
+                        int height = -1, width = -1;
+                        oCounter++;
 
-                        string sImgDestPath = sDestFolderName + System.IO.Path.GetFileName(file);
+                        string oImageDestination = sDestFolderName + Path.GetFileName(oFile);
 
-                        System.Drawing.Image image = System.Drawing.Image.FromFile(file);
+                        Image oImage = Image.FromFile(oFile);
 
-                        if (image.Width > image.Height)
+                        pictureBox1.Image = oImage;
+                        progressBar1.Value = oCounter;
+                        lblMessage.Text = string.Format("Image {0}: {1}", oCounter, Path.GetFileName(oFile));                        
+                        Application.DoEvents();
+
+                        if (oImage.Width > oImage.Height)
                         {
-                            width = txtWidth.Text;
-                            height = txtHeight.Text;
+                            width = oWidth;
+                            height = oHeight;
                         }
                         else
                         {
-                            width = txtHeight.Text;
-                            height = txtWidth.Text;
+                            width = oHeight;
+                            height = oWidth;
                         }
 
-                        System.Drawing.Size size = new System.Drawing.Size(int.Parse(width), int.Parse(height));
+                        Size oSize = new Size(width, height);
 
-                        Bitmap bitmap = new Bitmap(image, size);
-                        bitmap.Save(sImgDestPath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        Bitmap oBitmap = new Bitmap(oImage, oSize);
+                        oBitmap.Save(oImageDestination);
                     }
-
                 }
 
-                //MessageBox.Show("All resized images are copies to " + sDestFolderName, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                pictureBox1.Visible = progressBar1.Visible = false;
+                lblMessage.Text = "Total number of modified images: " + oCounter;
+                lblMessage.ForeColor = Color.Green;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
-        
-
         
     }
 }
