@@ -71,7 +71,7 @@
             this.btnCanarysPayslip.Text = "Parse eCanarys Pay-slip";
             this.btnCanarysPayslip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCanarysPayslip.UseVisualStyleBackColor = false;
-            this.btnCanarysPayslip.Click += new System.EventHandler(this.button1_Click);
+            this.btnCanarysPayslip.Click += new System.EventHandler(this.btnCanarysPayslip_Click);
             // 
             // label1
             // 
