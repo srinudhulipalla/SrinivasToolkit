@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Software Toolkit.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Pdf">
       <HintPath>C:\Users\SrinivasaRao\Desktop\WinFormsTest\bin\Debug\Aspose.Pdf.dll</HintPath>
@@ -67,6 +70,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageImages.Designer.cs">
+      <DependentUpon>ManageImages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="eCanarysPayslipParser.resx">
@@ -74,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageImages.resx">
+      <DependentUpon>ManageImages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,7 +124,11 @@
     <None Include="Resources\Cancel.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Aspose.Pdf.dll" />
+    <Content Include="bin\Debug\ICSharpCode.SharpZipLib.dll" />
     <Content Include="DB\SrinivasToolkit.sql" />
+    <Content Include="Software Toolkit.ico" />
+    <None Include="Resources\ManageImages.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

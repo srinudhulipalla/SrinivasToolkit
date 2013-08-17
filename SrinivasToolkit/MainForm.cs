@@ -26,8 +26,14 @@ namespace SrinivasToolkit
 
         private void btnCanarysPayslip_Click(object sender, EventArgs e)
         {            
-            eCanarysPayslipParser parser = new eCanarysPayslipParser();            
-            parser.ShowDialog();            
+            eCanarysPayslipParser oParser = new eCanarysPayslipParser();
+            oParser.ShowDialog();            
+        }
+
+        private void btnManageImages_Click(object sender, EventArgs e)
+        {
+            ManageImages oImages = new ManageImages();
+            oImages.ShowDialog();
         }
     }
 }

@@ -33,6 +33,7 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnCanarysPayslip = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnManageImages = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // shapeContainer1
@@ -64,7 +65,7 @@
             this.btnCanarysPayslip.ForeColor = System.Drawing.Color.DarkRed;
             this.btnCanarysPayslip.Image = global::SrinivasToolkit.Properties.Resources.canarys_logo;
             this.btnCanarysPayslip.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCanarysPayslip.Location = new System.Drawing.Point(71, 104);
+            this.btnCanarysPayslip.Location = new System.Drawing.Point(237, 136);
             this.btnCanarysPayslip.Name = "btnCanarysPayslip";
             this.btnCanarysPayslip.Size = new System.Drawing.Size(202, 65);
             this.btnCanarysPayslip.TabIndex = 2;
@@ -85,6 +86,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Srinivas Software Toolkit";
             // 
+            // btnManageImages
+            // 
+            this.btnManageImages.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnManageImages.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageImages.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnManageImages.Image = global::SrinivasToolkit.Properties.Resources.ManageImages;
+            this.btnManageImages.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageImages.Location = new System.Drawing.Point(503, 136);
+            this.btnManageImages.Name = "btnManageImages";
+            this.btnManageImages.Size = new System.Drawing.Size(206, 65);
+            this.btnManageImages.TabIndex = 3;
+            this.btnManageImages.Text = "Manage Images";
+            this.btnManageImages.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageImages.UseVisualStyleBackColor = false;
+            this.btnManageImages.Click += new System.EventHandler(this.btnManageImages_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +111,7 @@
             this.BackgroundImage = global::SrinivasToolkit.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.btnManageImages);
             this.Controls.Add(this.btnCanarysPayslip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
@@ -113,6 +131,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Button btnCanarysPayslip;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnManageImages;
     }
 }
 

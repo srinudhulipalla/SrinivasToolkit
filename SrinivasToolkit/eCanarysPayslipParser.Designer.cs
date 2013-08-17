@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eCanarysPayslipParser));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
             this.openPayslipFile = new System.Windows.Forms.OpenFileDialog();
             this.txtPayslipPath = new System.Windows.Forms.MaskedTextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -40,22 +40,22 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
-            // button1
+            // btnProcess
             // 
-            this.button1.BackColor = System.Drawing.Color.PeachPuff;
-            this.button1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Image = global::SrinivasToolkit.Properties.Resources.ParsePayslip;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(236, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Process";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnProcess.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnProcess.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcess.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnProcess.Image = global::SrinivasToolkit.Properties.Resources.ParsePayslip;
+            this.btnProcess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcess.Location = new System.Drawing.Point(236, 177);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(126, 45);
+            this.btnProcess.TabIndex = 0;
+            this.btnProcess.Text = "Process";
+            this.btnProcess.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // openPayslipFile
             // 
@@ -90,11 +90,14 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Image = global::SrinivasToolkit.Properties.Resources.canarys_logo;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(168, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 49);
+            this.label1.Size = new System.Drawing.Size(475, 49);
             this.label1.TabIndex = 3;
-            this.label1.Text = "eCanarys Pay-slip Parser";
+            this.label1.Text = "      eCanarys Pay-slip Parser";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -163,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtPayslipPath);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnProcess);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "eCanarysPayslipParser";
@@ -178,7 +181,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.OpenFileDialog openPayslipFile;
         private System.Windows.Forms.MaskedTextBox txtPayslipPath;
         private System.Windows.Forms.Button btnBrowse;

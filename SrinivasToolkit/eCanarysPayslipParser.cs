@@ -35,13 +35,13 @@ namespace SrinivasToolkit
             progressBar1.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnProcess_Click(object sender, EventArgs e)
         {
-            DoWork work = new DoWork(dothis);
+            DoWork work = new DoWork(PayslipParserWork);
             progressBar1.BeginInvoke(work);
         }
 
-        void dothis()
+        void PayslipParserWork()
         {
             try
             {
