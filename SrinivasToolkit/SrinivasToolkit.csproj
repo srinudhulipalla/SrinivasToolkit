@@ -58,6 +58,12 @@
   <ItemGroup>
     <Compile Include="Business\DataAccess.cs" />
     <Compile Include="Business\eCanarys.cs" />
+    <Compile Include="CalcInterest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalcInterest.Designer.cs">
+      <DependentUpon>CalcInterest.cs</DependentUpon>
+    </Compile>
     <Compile Include="eCanarysPayslipParser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CalcInterest.resx">
+      <DependentUpon>CalcInterest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="eCanarysPayslipParser.resx">
       <DependentUpon>eCanarysPayslipParser.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,9 +120,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Srinivas.png" />
     <None Include="Resources\canarys-logo.png" />
   </ItemGroup>
@@ -127,6 +133,9 @@
     <Content Include="bin\Debug\Aspose.Pdf.dll" />
     <Content Include="bin\Debug\ICSharpCode.SharpZipLib.dll" />
     <Content Include="DB\SrinivasToolkit.sql" />
+    <Content Include="Resources\background.png" />
+    <None Include="Resources\CalInterest_64.png" />
+    <None Include="Resources\CalInterest_32.png" />
     <Content Include="Software Toolkit.ico" />
     <None Include="Resources\ManageImages.png" />
   </ItemGroup>

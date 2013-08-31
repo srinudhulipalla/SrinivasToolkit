@@ -73,6 +73,26 @@ namespace SrinivasToolkit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CalInterest_32 {
+            get {
+                object obj = ResourceManager.GetObject("CalInterest_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CalInterest_64 {
+            get {
+                object obj = ResourceManager.GetObject("CalInterest_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap canarys_logo {
             get {
                 object obj = ResourceManager.GetObject("canarys-logo", resourceCulture);

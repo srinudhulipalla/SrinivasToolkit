@@ -35,5 +35,12 @@ namespace SrinivasToolkit
             ManageImages oImages = new ManageImages();
             oImages.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalcInterest oInterest = new CalcInterest();
+            oInterest.ShowDialog();
+        }
+
     }
 }
