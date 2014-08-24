@@ -14,7 +14,7 @@ namespace SrinivasToolkit
 {
     public partial class ManageImages : Form
     {
-        delegate void DoWork(int oHeight, int oWidth);
+        delegate void DoWork(double oScale);
 
         public ManageImages()
         {
@@ -35,10 +35,10 @@ namespace SrinivasToolkit
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            int oHeight = 0, oWidth = 0;
+            double oScale = 0;
 
-            int.TryParse(txtHeight.Text.Trim(), out oHeight);
-            int.TryParse(txtWidth.Text.Trim(), out oWidth);
+            double.TryParse(txtScale.Text.Trim(), out oScale);
+            //int.TryParse(txtWidth.Text.Trim(), out oWidth);
 
             if (string.IsNullOrWhiteSpace(txtImagesFolderPath.Text))
             {
@@ -46,20 +46,20 @@ namespace SrinivasToolkit
                 return;
             }
 
-            if (oHeight == 0)
+            if (oScale == 0)
             {
-                errorProvider1.SetError(txtHeight, "Invalid Height");
+                errorProvider1.SetError(txtScale, "Invalid value");
                 return;
             }
 
-            if (oWidth == 0)
-            {
-                errorProvider1.SetError(txtWidth, "Invalid Width");
-                return;
-            }
+            //if (oWidth == 0)
+            //{
+            //    errorProvider1.SetError(txtWidth, "Invalid Width");
+            //    return;
+            //}
 
             DoWork oWork = new DoWork(ChangeImageDimensions);
-            progressBar1.BeginInvoke(oWork, oHeight, oWidth);
+            progressBar1.BeginInvoke(oWork, oScale);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace SrinivasToolkit
             }
         }
 
-        void ChangeImageDimensions(int oHeight, int oWidth)
+        void ChangeImageDimensions(double oScale)
         {
             try
             {
@@ -86,7 +86,11 @@ namespace SrinivasToolkit
                 
                 string sDestFolderName = txtImagesFolderPath.Text + "\\" + DateTime.Now.ToString("dd-MMM-yyyy hh-mm tt") + "\\";
                 Directory.CreateDirectory(sDestFolderName);
-                
+
+
+
+
+
                 for (int i = 0; i < oSourceImages.Length; i++)
                 {
                     string oFile = oSourceImages[i];
@@ -94,7 +98,7 @@ namespace SrinivasToolkit
 
                     if (extn == ".jpg" || extn == ".jpeg" || extn == ".png")
                     {
-                        int height = -1, width = -1;
+                        //int height = -1, width = -1;
                         oCounter++;
 
                         string oImageDestination = sDestFolderName + Path.GetFileName(oFile);
@@ -103,24 +107,40 @@ namespace SrinivasToolkit
 
                         pictureBox1.Image = oImage;
                         progressBar1.Value = oCounter;
-                        lblMessage.Text = string.Format("Image {0}: {1}", oCounter, Path.GetFileName(oFile));                        
+                        lblMessage.Text = string.Format("Image {0}: {1}", oCounter, Path.GetFileName(oFile));
                         Application.DoEvents();
 
-                        if (oImage.Width > oImage.Height)
-                        {
-                            width = oWidth;
-                            height = oHeight;
-                        }
-                        else
-                        {
-                            width = oHeight;
-                            height = oWidth;
-                        }
+                        //if (oImage.Width > oImage.Height)
+                        //{
+                        //    width = oWidth;
+                        //    height = oHeight;
+                        //}
+                        //else
+                        //{
+                        //    width = oHeight;
+                        //    height = oWidth;
+                        //}
 
-                        Size oSize = new Size(width, height);
+                        //Size oSize = new Size(width, height);
 
-                        Bitmap oBitmap = new Bitmap(oImage, oSize);
-                        oBitmap.Save(oImageDestination);
+                        //Bitmap oBitmap = new Bitmap(oImage, oSize);
+                        //oBitmap.Save(oImageDestination);
+
+                        //using (var image = Image.FromStream(sourcePath))
+
+                        // can given width of image as we want
+                        var newWidth = (int)(oImage.Width * ((100 - oScale) / 100));
+                        // can given height of image as we want
+                        var newHeight = (int)(oImage.Height * ((100 - oScale) / 100));
+                        var thumbnailImg = new Bitmap(newWidth, newHeight);
+                        var thumbGraph = Graphics.FromImage(thumbnailImg);
+                        thumbGraph.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                        thumbGraph.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        thumbGraph.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        var imageRectangle = new Rectangle(0, 0, newWidth, newHeight);
+                        thumbGraph.DrawImage(oImage, imageRectangle);
+                        thumbnailImg.Save(oImageDestination, oImage.RawFormat);
+
                     }
                 }
 

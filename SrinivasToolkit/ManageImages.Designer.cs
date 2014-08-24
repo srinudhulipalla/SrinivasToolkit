@@ -39,11 +39,8 @@
             this.btnProcess = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtImagesFolderPath = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtWidth = new System.Windows.Forms.TextBox();
-            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtScale = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -104,11 +101,8 @@
             this.tabImageDimensions.Controls.Add(this.btnProcess);
             this.tabImageDimensions.Controls.Add(this.btnBrowse);
             this.tabImageDimensions.Controls.Add(this.txtImagesFolderPath);
-            this.tabImageDimensions.Controls.Add(this.label5);
-            this.tabImageDimensions.Controls.Add(this.label4);
             this.tabImageDimensions.Controls.Add(this.label3);
-            this.tabImageDimensions.Controls.Add(this.txtWidth);
-            this.tabImageDimensions.Controls.Add(this.txtHeight);
+            this.tabImageDimensions.Controls.Add(this.txtScale);
             this.tabImageDimensions.Controls.Add(this.label2);
             this.tabImageDimensions.Font = new System.Drawing.Font("Courier New", 8.25F);
             this.tabImageDimensions.ForeColor = System.Drawing.Color.DarkRed;
@@ -182,59 +176,27 @@
             this.txtImagesFolderPath.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImagesFolderPath.Location = new System.Drawing.Point(190, 30);
             this.txtImagesFolderPath.Name = "txtImagesFolderPath";
-            this.txtImagesFolderPath.ReadOnly = true;
             this.txtImagesFolderPath.Size = new System.Drawing.Size(342, 21);
             this.txtImagesFolderPath.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Courier New", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(45, 225);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(455, 14);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Note: Height and Width will be swaped based on Image Orientation";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(134, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Width:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(127, 73);
+            this.label3.Location = new System.Drawing.Point(2, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(183, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Height:";
+            this.label3.Text = "Reduce dimentions by (%):";
             // 
-            // txtWidth
+            // txtScale
             // 
-            this.txtWidth.Location = new System.Drawing.Point(190, 105);
-            this.txtWidth.Name = "txtWidth";
-            this.txtWidth.Size = new System.Drawing.Size(136, 20);
-            this.txtWidth.TabIndex = 6;
-            this.txtWidth.Text = "950";
-            // 
-            // txtHeight
-            // 
-            this.txtHeight.Location = new System.Drawing.Point(190, 69);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(136, 20);
-            this.txtHeight.TabIndex = 5;
-            this.txtHeight.Text = "712";
+            this.txtScale.Location = new System.Drawing.Point(190, 69);
+            this.txtScale.Name = "txtScale";
+            this.txtScale.Size = new System.Drawing.Size(136, 20);
+            this.txtScale.TabIndex = 5;
+            this.txtScale.Text = "50";
             // 
             // label2
             // 
@@ -254,7 +216,7 @@
             // 
             // folderBrowserDialog1
             // 
-            this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyPictures;
+            this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // ManageImages
             // 
@@ -291,11 +253,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabImageDimensions;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtWidth;
-        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.TextBox txtScale;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.MaskedTextBox txtImagesFolderPath;
